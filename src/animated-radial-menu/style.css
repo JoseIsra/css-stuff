@@ -1,0 +1,66 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(#009bf4, #212121);
+  box-shadow: inset 5px 10px 25px rgba(0, 0, 0, 0.4),
+    inset 6px 4px 35px rgba(0, 0, 0, 0.4);
+}
+
+.menu {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.menu li {
+  list-style: none;
+  position: absolute;
+  transform-origin: 100px;
+  left: 0;
+  transition: 0.5s;
+  transition-delay: calc(var(--i) * 0.1s);
+  transform: rotate(0deg) translateX(100px);
+}
+
+.menu.active li {
+  /* opacity: 1; */
+  transform: rotate(calc(360deg / 4 * var(--i)));
+}
+
+.menu .icon {
+  font-size: 30px;
+}
+
+.toggle {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  background-color: #fffffe;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  z-index: 99999;
+  cursor: pointer;
+  transition: all 1.25s;
+}
+
+.toggle > span {
+  font-size: 40px;
+}
+
+.menu.active .toggle {
+  transform: rotate(315deg);
+}
